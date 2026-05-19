@@ -8,20 +8,11 @@ namespace SimulacionMILSIM.Services
     {
         private Random rnd = new Random();
 
-        // ==========================
-        // COSTOS BASE
-        // ==========================
-
-        private const double COSTO_INVENTARIO = 0.5;
-
-        private const double COSTO_FALTANTE = 5.0;
-
-        private const double COSTO_CONVOY = 250.0;
-
-        public List<ResultadoSimulacion> EjecutarSimulacion(
+        public List<ResultadoSimulacion> 
+            EjecutarSimulacion(
             Inventario inventario,
             Escuadra escuadra,
-            int horas)
+            ConfigSim config)
         {
             List<ResultadoSimulacion> resultados =
                 new List<ResultadoSimulacion>();
@@ -30,7 +21,7 @@ namespace SimulacionMILSIM.Services
 
             double costoTotalAcumulado = 0;
 
-            for (int hora = 1; hora <= horas; hora++)
+            for (int hora = 1; hora <= config.HorasSimulacion; hora++)
             {
                 bool convoyLlegado = false;
 
@@ -95,11 +86,13 @@ namespace SimulacionMILSIM.Services
                             inventario.CantidadReabastecimiento;
 
                         convoy.HorasRestantes =
-                            rnd.Next(2, 6);
+                            rnd.Next(
+                                config.TiempoMinConvoy,
+                                config.TiempoMaxConvoy +1);
 
                         reorden = true;
 
-                        costoConvoy = COSTO_CONVOY;
+                        costoConvoy = config.CostoConvoy;
                     }
                 }
 
@@ -107,13 +100,9 @@ namespace SimulacionMILSIM.Services
                 // COSTOS
                 // ==========================
 
-                double costoInventario =
-                    inventario.StockActual *
-                    COSTO_INVENTARIO;
+                double costoInventario = config.CostoInventario;
 
-                double costoFaltante =
-                    faltante *
-                    COSTO_FALTANTE;
+                double costoFaltante = config.CostoFaltante;
 
                 double costoTotal =
                     costoInventario +

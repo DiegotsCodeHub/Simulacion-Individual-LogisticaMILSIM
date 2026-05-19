@@ -13,7 +13,7 @@ using SimulacionMILSIM.Services;
 
 namespace SimulacionMILSIM
 {
-    public partial class Form1 : Form
+    public partial class Form1: Form
     {
         public Form1()
         {
@@ -23,7 +23,7 @@ namespace SimulacionMILSIM
         private void btnSimular_Click(object sender, EventArgs e)
         {
 
-            chartMunicion.Series.Clear();
+            chartMunicion.ResetAutoValues();
             lstEventos.Items.Clear();
             lstConvoy.Items.Clear();
             lstCostos.Items.Clear();
@@ -40,9 +40,32 @@ namespace SimulacionMILSIM
             Escuadra escuadra = new Escuadra
             {
                 Nombre = "Alpha",
-                ConsumoMinimo = 50,
-                ConsumoMaximo = 150
+                ConsumoMinimo = (int)numConsumoMin.Value,
+                ConsumoMaximo = (int)numConsumoMax.Value
             };
+
+            ConfigSim config =
+                new ConfigSim
+                {
+                    CostoInventario =
+                    (double)numCostoInventario.Value,
+
+                    CostoFaltante =
+                    (double)numCostoFaltante.Value,
+
+                    CostoConvoy =
+                    (double)numCostoConvoy.Value,
+
+                    TiempoMinConvoy =
+                    (int)numTiempoMinConvoy.Value,
+
+                    TiempoMaxConvoy =
+                    (int)numTiempoMaxConvoy.Value,
+
+                    HorasSimulacion =
+                    (int)numHoras.Value
+                };
+
 
             Simulador simulador = new Simulador();
 
@@ -50,7 +73,7 @@ namespace SimulacionMILSIM
                 simulador.EjecutarSimulacion(
                     inventario,
                     escuadra,
-                    24);
+                    config);
 
             chartMunicion.Series.Clear();
 
@@ -102,6 +125,26 @@ namespace SimulacionMILSIM
                 chartMunicion.Series["Municion"]
                     .Points.AddXY(r.Hora, r.StockRestante);
             }
+
+            int consumoTotal = resultados.Sum(r => r.Consumo);
+            lblConsumoTotal.Text = "Consumo total de municiones: " + consumoTotal.ToString();
+
+            int faltantesTotales = resultados.Sum(r => r.Faltante);
+            lblFaltantesTotales.Text = "Municiones faltantes: " + faltantesTotales.ToString();
+
+            double costoTotal = resultados.Last().CostoTotal;
+            lblCostoTotal.Text = "Costo total de la operacion: " + costoTotal.ToString("F2");
+
+            int convoyes = resultados.Count(r => r.ReabastecimientoSolicitado);
+            lblConvoyes.Text = "Cantidad de Convoys enviados: " + convoyes.ToString();
+
+            int horasSinMunicion = resultados.Count(r => r.SinMunicion);
+            lblHorasSinMunicion.Text = "Horas de combate sin municion: " + horasSinMunicion.ToString();
+
+            double eficiencia = (1.0 - ((double)faltantesTotales / consumoTotal)) * 100;
+            lblEficiencia.Text = "Eficiencia general de la logistica: " + eficiencia.ToString("F2") + "%";
+
+
         }
 
 
