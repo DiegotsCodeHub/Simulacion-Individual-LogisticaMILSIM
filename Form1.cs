@@ -77,7 +77,61 @@ namespace SimulacionMILSIM
 
             chartMunicion.Series.Clear();
 
+            // =======================
+            // GRAFICA MUNICIÓN
+            // =======================
+
             chartMunicion.Series.Add("Municion");
+
+            chartMunicion.Series["Municion"].ChartType =
+                System.Windows.Forms.DataVisualization.Charting
+                .SeriesChartType.Column;
+
+            chartMunicion.Series["Municion"].Color =
+                Color.DodgerBlue;
+
+            // =======================
+            // GRAFICA FALTANTES
+            // =======================
+
+            chartMunicion.Series.Add("Faltantes");
+
+            chartMunicion.Series["Faltantes"].ChartType =
+                System.Windows.Forms.DataVisualization.Charting
+                .SeriesChartType.Column;
+
+            chartMunicion.Series["Faltantes"].Color =
+                Color.Red;
+
+            // =======================
+            // GRAFICA COSTOS
+            // =======================
+
+            chartMunicion.Series.Add("Costos");
+
+            chartMunicion.Series["Costos"].ChartType =
+                System.Windows.Forms.DataVisualization.Charting
+                .SeriesChartType.Line;
+
+            chartMunicion.Series["Costos"].BorderWidth = 3;
+
+            chartMunicion.Series["Costos"].Color =
+                Color.LimeGreen;
+
+            // =======================
+            // GRAFICA CONSUMO
+            // =======================
+
+            chartMunicion.Series.Add("Consumo");
+
+            chartMunicion.Series["Consumo"].ChartType =
+                System.Windows.Forms.DataVisualization.Charting
+                .SeriesChartType.Line;
+
+            chartMunicion.Series["Consumo"].BorderWidth = 3;
+
+            chartMunicion.Series["Consumo"].Color =
+                Color.Orange;
 
             foreach (var r in resultados)
             {
@@ -122,8 +176,42 @@ namespace SimulacionMILSIM
                     $"Costo acumulado: $" +
                     $"{r.CostoTotal:F2}");
 
+
+                // =======================
+                // GRAFICA RESULTADOS MUNICIÓN
+                // =======================
+
                 chartMunicion.Series["Municion"]
-                    .Points.AddXY(r.Hora, r.StockRestante);
+                    .Points.AddXY(
+                        r.Hora,
+                        r.StockRestante);
+
+                // =======================
+                // GRAFICA RESULTADOS FALTANTES
+                // =======================
+
+                chartMunicion.Series["Faltantes"]
+                    .Points.AddXY(
+                        r.Hora,
+                        r.Faltante);
+
+                // =======================
+                //  GRAFICA RESULTADOS OSTOS
+                // =======================
+
+                chartMunicion.Series["Costos"]
+                    .Points.AddXY(
+                        r.Hora,
+                        r.CostoTotal);
+
+                // =======================
+                // GRAFICA RESULTADOS CONSUMO
+                // =======================
+
+                chartMunicion.Series["Consumo"]
+                    .Points.AddXY(
+                        r.Hora,
+                        r.Consumo);
             }
 
             int consumoTotal = resultados.Sum(r => r.Consumo);

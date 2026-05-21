@@ -65,6 +65,11 @@
             this.lblConvoyes = new System.Windows.Forms.Label();
             this.lblHorasSinMunicion = new System.Windows.Forms.Label();
             this.lblEficiencia = new System.Windows.Forms.Label();
+            this.btnNumPseudo = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnPruebaFrec = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numInventario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numReorden)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numRestock)).BeginInit();
@@ -77,6 +82,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numCostoFaltante)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCostoInventario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numHoras)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // numInventario
@@ -120,9 +126,9 @@
             this.btnSimular.BackColor = System.Drawing.Color.OliveDrab;
             this.btnSimular.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSimular.Font = new System.Drawing.Font("Stencil", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSimular.Location = new System.Drawing.Point(650, 230);
+            this.btnSimular.Location = new System.Drawing.Point(280, 744);
             this.btnSimular.Name = "btnSimular";
-            this.btnSimular.Size = new System.Drawing.Size(92, 69);
+            this.btnSimular.Size = new System.Drawing.Size(107, 55);
             this.btnSimular.TabIndex = 4;
             this.btnSimular.Text = "Ejecutar Simulacion";
             this.btnSimular.UseVisualStyleBackColor = false;
@@ -148,7 +154,7 @@
             series2.Legend = "Legend1";
             series2.Name = "Municion";
             this.chartMunicion.Series.Add(series2);
-            this.chartMunicion.Size = new System.Drawing.Size(691, 346);
+            this.chartMunicion.Size = new System.Drawing.Size(436, 346);
             this.chartMunicion.TabIndex = 6;
             this.chartMunicion.Text = "chart1";
             // 
@@ -443,6 +449,59 @@
             this.lblEficiencia.TabIndex = 37;
             this.lblEficiencia.Text = "Eficiencia general de la logistica:";
             // 
+            // btnNumPseudo
+            // 
+            this.btnNumPseudo.BackColor = System.Drawing.Color.OliveDrab;
+            this.btnNumPseudo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnNumPseudo.Font = new System.Drawing.Font("Stencil", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNumPseudo.Location = new System.Drawing.Point(397, 743);
+            this.btnNumPseudo.Name = "btnNumPseudo";
+            this.btnNumPseudo.Size = new System.Drawing.Size(172, 55);
+            this.btnNumPseudo.TabIndex = 39;
+            this.btnNumPseudo.Text = "Numeros PseudoAleatorios";
+            this.btnNumPseudo.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.OliveDrab;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Stencil", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(821, 742);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(107, 55);
+            this.button1.TabIndex = 40;
+            this.button1.Text = "Prueba de Prueba K-S";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // btnPruebaFrec
+            // 
+            this.btnPruebaFrec.BackColor = System.Drawing.Color.OliveDrab;
+            this.btnPruebaFrec.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPruebaFrec.Font = new System.Drawing.Font("Stencil", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPruebaFrec.Location = new System.Drawing.Point(703, 741);
+            this.btnPruebaFrec.Name = "btnPruebaFrec";
+            this.btnPruebaFrec.Size = new System.Drawing.Size(107, 55);
+            this.btnPruebaFrec.TabIndex = 41;
+            this.btnPruebaFrec.Text = "Prueba de Frecuencia";
+            this.btnPruebaFrec.UseVisualStyleBackColor = false;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(510, 319);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(253, 223);
+            this.dataGridView1.TabIndex = 42;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(510, 548);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(253, 117);
+            this.textBox1.TabIndex = 43;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -451,6 +510,11 @@
             this.BackgroundImage = global::SimulacionMILSIM.Properties.Resources.tabletUW2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1304, 813);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btnPruebaFrec);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnNumPseudo);
             this.Controls.Add(this.lblHorasSinMunicion);
             this.Controls.Add(this.lblEficiencia);
             this.Controls.Add(this.lblCostoTotal);
@@ -500,6 +564,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numCostoFaltante)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCostoInventario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numHoras)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -540,6 +605,11 @@
         private System.Windows.Forms.Label lblConvoyes;
         private System.Windows.Forms.Label lblHorasSinMunicion;
         private System.Windows.Forms.Label lblEficiencia;
+        private System.Windows.Forms.Button btnNumPseudo;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnPruebaFrec;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
