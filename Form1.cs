@@ -103,32 +103,24 @@ namespace SimulacionMILSIM
 
             switch (cmbConvoyRiesgo.Text)
             {
-                case "Bajo":
-
+                case "Baja":
                     config.TiempoMinConvoy = 1;
                     config.TiempoMaxConvoy = 3;
-
                     break;
 
-                case "Medio":
-
+                case "Media":
                     config.TiempoMinConvoy = 2;
                     config.TiempoMaxConvoy = 6;
-
                     break;
 
-                case "Alto":
-
+                case "Alta":
                     config.TiempoMinConvoy = 4;
                     config.TiempoMaxConvoy = 10;
-
                     break;
 
                 default:
-
-                    config.TiempoMinConvoy = 2;
-                    config.TiempoMaxConvoy = 5;
-
+                    config.TiempoMinConvoy = 1;
+                    config.TiempoMaxConvoy = 2;
                     break;
             }
 

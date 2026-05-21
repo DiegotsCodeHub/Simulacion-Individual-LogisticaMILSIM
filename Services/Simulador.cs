@@ -64,6 +64,10 @@ namespace SimulacionMILSIMSimulador
                     perdidaMunicion = true;
                 }
 
+                // ======================
+                // FALTANTE DE MUNICION
+                // ======================
+
                 int faltante = 0;
 
                 bool sinMunicion = false;

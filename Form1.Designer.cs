@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.numInventario = new System.Windows.Forms.NumericUpDown();
             this.numReorden = new System.Windows.Forms.NumericUpDown();
             this.numRestock = new System.Windows.Forms.NumericUpDown();
@@ -77,6 +77,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cmbConvoyRiesgo = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numInventario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numReorden)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numRestock)).BeginInit();
@@ -148,16 +150,16 @@
             // 
             // chartMunicion
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartMunicion.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartMunicion.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.chartMunicion.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartMunicion.Legends.Add(legend1);
             this.chartMunicion.Location = new System.Drawing.Point(366, 283);
             this.chartMunicion.Name = "chartMunicion";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Municion";
-            this.chartMunicion.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Municion";
+            this.chartMunicion.Series.Add(series1);
             this.chartMunicion.Size = new System.Drawing.Size(693, 380);
             this.chartMunicion.TabIndex = 6;
             this.chartMunicion.Text = "chart1";
@@ -586,6 +588,28 @@
             this.cmbConvoyRiesgo.Size = new System.Drawing.Size(108, 21);
             this.cmbConvoyRiesgo.TabIndex = 45;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Stencil", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.Control;
+            this.label7.Location = new System.Drawing.Point(583, 12);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(419, 32);
+            this.label7.TabIndex = 48;
+            this.label7.Text = "Cruz Patino Diego - 22210297";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Stencil", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.Control;
+            this.label6.Location = new System.Drawing.Point(97, 15);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(466, 29);
+            this.label6.TabIndex = 47;
+            this.label6.Text = "LOGISTICA DE MUNICIONES EN COMBATE";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -594,6 +618,8 @@
             this.BackgroundImage = global::SimulacionMILSIM.Properties.Resources.tabletUW2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1612, 813);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cmbConvoyRiesgo);
             this.Controls.Add(this.label4);
@@ -694,6 +720,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cmbConvoyRiesgo;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
     }
 }
 
