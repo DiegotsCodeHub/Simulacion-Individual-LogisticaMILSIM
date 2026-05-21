@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SimulacionMILSIM.Models;
+using SimulacionMILSIM.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,13 +10,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using SimulacionMILSIM.Models;
-using SimulacionMILSIM.Services;
-
 namespace SimulacionMILSIM
 {
     public partial class Form1: Form
     {
+        int indiceActual = 0;
+
+        List<double> numerosGenerados =
+            new List<double>();
+
+
         public Form1()
         {
             InitializeComponent();
@@ -235,12 +240,16 @@ namespace SimulacionMILSIM
 
         }
 
+        private void btnNumPseudo_Click(object sender, EventArgs e)
+        {
+            frmNPA FormaPsuedo = new frmNPA();
 
-
-
-
-
-
-
+            btnNumPseudo.Enabled = false;
+            DialogResult Accion = FormaPsuedo.ShowDialog();
+            if (Accion == DialogResult.Cancel)
+            {
+                btnNumPseudo.Enabled = true;
+            }
+        }
     }
 }

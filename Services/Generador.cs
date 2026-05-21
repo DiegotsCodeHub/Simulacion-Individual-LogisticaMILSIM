@@ -1,42 +1,28 @@
 ﻿using System.Collections.Generic;
+using static SimulacionMILSIM.Variables;
 
-namespace SimulacionContaminacion.Services
+namespace SimulacionMILSIM.Services
 {
-    public class GeneradorCongruencial
+    public class pseudo
     {
-        private long semilla;
-        private long a;
-        private long c;
-        private long m;
+        public float[] Numeros { get; set; }
 
-        public GeneradorCongruencial(
-            long semilla = 17,
-            long a = 101,
-            long c = 221,
-            long m = 17001)
+        public pseudo()
         {
-            this.semilla = semilla;
-            this.a = a;
-            this.c = c;
-            this.m = m;
+            Numeros = new float[325];
         }
 
-        public List<double> GenerarNumeros(int cantidad)
+        public void Generar(int A, int c, int Xo, int Mod, int Total)
         {
-            List<double> numeros = new List<double>();
+            Numeros = new float[Total];
 
-            long X = semilla;
-
-            for (int i = 0; i < cantidad; i++)
+            for (int i = 0; i < Total; i++)
             {
-                X = (a * X + c) % m;
-
-                double ri = (double)X / m;
-
-                numeros.Add(ri);
+                Xo = (A * Xo + c) % Mod;
+                Numeros[i] = Xo * 1f / Mod;
             }
 
-            return numeros;
+            Encendido = true;
         }
     }
 }

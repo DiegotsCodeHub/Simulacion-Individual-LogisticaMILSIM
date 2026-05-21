@@ -68,8 +68,8 @@
             this.btnNumPseudo = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnPruebaFrec = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dgvNumeros = new System.Windows.Forms.DataGridView();
+            this.txtResultadosPruebas = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numInventario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numReorden)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numRestock)).BeginInit();
@@ -82,7 +82,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numCostoFaltante)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCostoInventario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numHoras)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNumeros)).BeginInit();
             this.SuspendLayout();
             // 
             // numInventario
@@ -452,6 +452,7 @@
             // btnNumPseudo
             // 
             this.btnNumPseudo.BackColor = System.Drawing.Color.OliveDrab;
+            this.btnNumPseudo.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnNumPseudo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnNumPseudo.Font = new System.Drawing.Font("Stencil", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNumPseudo.Location = new System.Drawing.Point(397, 743);
@@ -460,6 +461,7 @@
             this.btnNumPseudo.TabIndex = 39;
             this.btnNumPseudo.Text = "Numeros PseudoAleatorios";
             this.btnNumPseudo.UseVisualStyleBackColor = false;
+            this.btnNumPseudo.Click += new System.EventHandler(this.btnNumPseudo_Click);
             // 
             // button1
             // 
@@ -485,22 +487,22 @@
             this.btnPruebaFrec.Text = "Prueba de Frecuencia";
             this.btnPruebaFrec.UseVisualStyleBackColor = false;
             // 
-            // dataGridView1
+            // dgvNumeros
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(510, 319);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(253, 223);
-            this.dataGridView1.TabIndex = 42;
+            this.dgvNumeros.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvNumeros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvNumeros.Location = new System.Drawing.Point(510, 319);
+            this.dgvNumeros.Name = "dgvNumeros";
+            this.dgvNumeros.Size = new System.Drawing.Size(253, 223);
+            this.dgvNumeros.TabIndex = 42;
             // 
-            // textBox1
+            // txtResultadosPruebas
             // 
-            this.textBox1.Location = new System.Drawing.Point(510, 548);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(253, 117);
-            this.textBox1.TabIndex = 43;
+            this.txtResultadosPruebas.Location = new System.Drawing.Point(510, 548);
+            this.txtResultadosPruebas.Multiline = true;
+            this.txtResultadosPruebas.Name = "txtResultadosPruebas";
+            this.txtResultadosPruebas.Size = new System.Drawing.Size(253, 117);
+            this.txtResultadosPruebas.TabIndex = 43;
             // 
             // Form1
             // 
@@ -510,8 +512,8 @@
             this.BackgroundImage = global::SimulacionMILSIM.Properties.Resources.tabletUW2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1304, 813);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.txtResultadosPruebas);
+            this.Controls.Add(this.dgvNumeros);
             this.Controls.Add(this.btnPruebaFrec);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnNumPseudo);
@@ -564,7 +566,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numCostoFaltante)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCostoInventario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numHoras)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNumeros)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -608,8 +610,8 @@
         private System.Windows.Forms.Button btnNumPseudo;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnPruebaFrec;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DataGridView dgvNumeros;
+        private System.Windows.Forms.TextBox txtResultadosPruebas;
     }
 }
 
