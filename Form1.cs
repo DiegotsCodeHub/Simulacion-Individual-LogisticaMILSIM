@@ -1,5 +1,6 @@
 ﻿using SimulacionMILSIM.Models;
 using SimulacionMILSIM.Services;
+using static SimulacionMILSIMVariables.Variables;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,15 +15,23 @@ namespace SimulacionMILSIM
 {
     public partial class Form1: Form
     {
-        int indiceActual = 0;
-
-        List<double> numerosGenerados =
-            new List<double>();
-
+      
+        List<double> numerosGenerados = new List<double>();
 
         public Form1()
         {
             InitializeComponent();
+            
+            if (Encendido == true)
+            {
+                Encender();
+
+                txtA.Text = A.ToString();
+                txtC.Text = C.ToString();
+                txtXo.Text = Xo.ToString();
+                txtM.Text = Mod.ToString();
+                txtTotal.Text = Total.ToString();
+            }
         }
 
         private void btnSimular_Click(object sender, EventArgs e)
@@ -38,8 +47,7 @@ namespace SimulacionMILSIM
             {
                 StockActual = (int)numInventario.Value,
                 PuntoReorden = (int)numReorden.Value,
-                CantidadReabastecimiento =
-                    (int)numRestock.Value
+                CantidadReabastecimiento = (int)numRestock.Value
             };
 
             Escuadra escuadra = new Escuadra
@@ -52,23 +60,17 @@ namespace SimulacionMILSIM
             ConfigSim config =
                 new ConfigSim
                 {
-                    CostoInventario =
-                    (double)numCostoInventario.Value,
+                    CostoInventario = (double)numCostoInventario.Value,
 
-                    CostoFaltante =
-                    (double)numCostoFaltante.Value,
+                    CostoFaltante = (double)numCostoFaltante.Value,
 
-                    CostoConvoy =
-                    (double)numCostoConvoy.Value,
+                    CostoConvoy = (double)numCostoConvoy.Value,
 
-                    TiempoMinConvoy =
-                    (int)numTiempoMinConvoy.Value,
+                    TiempoMinConvoy = (int)numTiempoMinConvoy.Value,
 
-                    TiempoMaxConvoy =
-                    (int)numTiempoMaxConvoy.Value,
+                    TiempoMaxConvoy = (int)numTiempoMaxConvoy.Value,
 
-                    HorasSimulacion =
-                    (int)numHoras.Value
+                    HorasSimulacion = (int)numHoras.Value
                 };
 
 
@@ -250,6 +252,49 @@ namespace SimulacionMILSIM
             {
                 btnNumPseudo.Enabled = true;
             }
+        }
+
+        private void cmdGenerar_Click(object sender, EventArgs e)
+        {
+            A = Convert.ToInt32(txtA.Text);
+            C = Convert.ToInt32(txtC.Text);
+            Xo = Convert.ToInt32(txtXo.Text);
+            Mod = Convert.ToInt32(txtM.Text);
+
+            // Total =
+
+            txtTotal.Text = Total.ToString();
+
+            Total = Convert.ToInt32(txtTotal.Text);
+
+            Pseudo.Generar(A, C, Xo, Mod, Total);
+
+            dgvNumeros.Rows.Clear();
+
+            if (Encendido == true)
+            {
+                Encender();
+            }
+        }
+
+        private void Encender()
+        {
+            // Esta es la función donde se imprimen
+
+            dgvNumeros.Rows.Clear();
+
+            for (int i = 0; i < Total; i++)
+            {
+                DataGridViewRow row = (DataGridViewRow)dgvNumeros.Rows[0].Clone();
+
+                row.Cells[0].Value = i + 1;
+                row.Cells[1].Value = Pseudo.Numeros[i];
+                dgvNumeros.Rows.Add(row);
+
+                numerosGenerados.Add(Pseudo.Numeros[i]);
+            }
+
+            btnSimular.Enabled = true;
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using static SimulacionMILSIM.Variables;
+using static SimulacionMILSIMVariables.Variables;
 
 namespace SimulacionMILSIM.Services
 {

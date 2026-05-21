@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static SimulacionMILSIM.Variables;
+using static SimulacionMILSIMVariables.Variables;
 using MathNet.Numerics.Distributions;
 using System.Windows.Forms.DataVisualization;
 
