@@ -1,5 +1,5 @@
 ﻿using SimulacionMILSIM.Models;
-using SimulacionMILSIM.Services;
+using SimulacionMILSIMSimulador;
 using static SimulacionMILSIMVariables.Variables;
 using System;
 using System.Collections.Generic;
@@ -37,6 +37,17 @@ namespace SimulacionMILSIM
         private void btnSimular_Click(object sender, EventArgs e)
         {
 
+            if (!Encendido)
+            {
+                MessageBox.Show(
+                    "Primero debes generar números pseudoaleatorios.",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+
+                return;
+            }
+
             chartMunicion.ResetAutoValues();
             lstEventos.Items.Clear();
             lstConvoy.Items.Clear();
@@ -53,9 +64,30 @@ namespace SimulacionMILSIM
             Escuadra escuadra = new Escuadra
             {
                 Nombre = "Alpha",
-                ConsumoMinimo = (int)numConsumoMin.Value,
-                ConsumoMaximo = (int)numConsumoMax.Value
             };
+
+            switch (cmbIntensidadCombate.Text)
+            {
+                case "Baja":
+                    escuadra.ConsumoMinimo = 50;
+                    escuadra.ConsumoMaximo = 150;
+                    break;
+
+                case "Media":
+                    escuadra.ConsumoMinimo = 150;
+                    escuadra.ConsumoMaximo = 350;
+                    break;
+
+                case "Alta":
+                    escuadra.ConsumoMinimo = 350;
+                    escuadra.ConsumoMaximo = 700;
+                    break;
+
+                default:
+                    escuadra.ConsumoMinimo = 50;
+                    escuadra.ConsumoMaximo = 150;
+                    break;
+            }
 
             ConfigSim config =
                 new ConfigSim
@@ -66,12 +98,39 @@ namespace SimulacionMILSIM
 
                     CostoConvoy = (double)numCostoConvoy.Value,
 
-                    TiempoMinConvoy = (int)numTiempoMinConvoy.Value,
-
-                    TiempoMaxConvoy = (int)numTiempoMaxConvoy.Value,
-
-                    HorasSimulacion = (int)numHoras.Value
+                    HorasSimulacion = (int)numHoras.Value,
                 };
+
+            switch (cmbConvoyRiesgo.Text)
+            {
+                case "Bajo":
+
+                    config.TiempoMinConvoy = 1;
+                    config.TiempoMaxConvoy = 3;
+
+                    break;
+
+                case "Medio":
+
+                    config.TiempoMinConvoy = 2;
+                    config.TiempoMaxConvoy = 6;
+
+                    break;
+
+                case "Alto":
+
+                    config.TiempoMinConvoy = 4;
+                    config.TiempoMaxConvoy = 10;
+
+                    break;
+
+                default:
+
+                    config.TiempoMinConvoy = 2;
+                    config.TiempoMaxConvoy = 5;
+
+                    break;
+            }
 
 
             Simulador simulador = new Simulador();
@@ -261,11 +320,20 @@ namespace SimulacionMILSIM
             Xo = Convert.ToInt32(txtXo.Text);
             Mod = Convert.ToInt32(txtM.Text);
 
-            // Total =
+            int eventos = 4;
 
+            if (cmbConvoyRiesgo.Text == "Alto")
+            {
+                eventos++;
+            }
+
+            if (cmbIntensidadCombate.Text == "Alta")
+            {
+                eventos++;
+            }
+
+            Total = ((int)numHoras.Value * eventos) + 50;
             txtTotal.Text = Total.ToString();
-
-            Total = Convert.ToInt32(txtTotal.Text);
 
             Pseudo.Generar(A, C, Xo, Mod, Total);
 

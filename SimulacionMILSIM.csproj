@@ -69,6 +69,7 @@
     <Compile Include="Models\Resultados.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Funciones.cs" />
     <Compile Include="Services\Generador.cs" />
     <Compile Include="Services\Simulador.cs" />
     <Compile Include="Services\Variables.cs" />

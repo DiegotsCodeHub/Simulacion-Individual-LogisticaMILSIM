@@ -43,14 +43,6 @@
             this.lstFaltantes = new System.Windows.Forms.ListBox();
             this.lstConvoy = new System.Windows.Forms.ListBox();
             this.lstCostos = new System.Windows.Forms.ListBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.numTiempoMinConvoy = new System.Windows.Forms.NumericUpDown();
-            this.numConsumoMin = new System.Windows.Forms.NumericUpDown();
-            this.numConsumoMax = new System.Windows.Forms.NumericUpDown();
-            this.label7 = new System.Windows.Forms.Label();
-            this.numTiempoMaxConvoy = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -81,14 +73,14 @@
             this.txtM = new System.Windows.Forms.TextBox();
             this.lblC = new System.Windows.Forms.Label();
             this.cmdGenerar = new System.Windows.Forms.Button();
+            this.cmbIntensidadCombate = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cmbConvoyRiesgo = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.numInventario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numReorden)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numRestock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartMunicion)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numTiempoMinConvoy)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numConsumoMin)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numConsumoMax)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numTiempoMaxConvoy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCostoConvoy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCostoFaltante)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCostoInventario)).BeginInit();
@@ -160,13 +152,13 @@
             this.chartMunicion.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             this.chartMunicion.Legends.Add(legend2);
-            this.chartMunicion.Location = new System.Drawing.Point(366, 314);
+            this.chartMunicion.Location = new System.Drawing.Point(366, 283);
             this.chartMunicion.Name = "chartMunicion";
             series2.ChartArea = "ChartArea1";
             series2.Legend = "Legend1";
             series2.Name = "Municion";
             this.chartMunicion.Series.Add(series2);
-            this.chartMunicion.Size = new System.Drawing.Size(693, 349);
+            this.chartMunicion.Size = new System.Drawing.Size(693, 380);
             this.chartMunicion.TabIndex = 6;
             this.chartMunicion.Text = "chart1";
             // 
@@ -184,7 +176,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Stencil", 10F);
-            this.label2.Location = new System.Drawing.Point(363, 96);
+            this.label2.Location = new System.Drawing.Point(367, 96);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(250, 17);
             this.label2.TabIndex = 8;
@@ -194,7 +186,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Stencil", 10F);
-            this.label3.Location = new System.Drawing.Point(363, 123);
+            this.label3.Location = new System.Drawing.Point(430, 121);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(187, 17);
             this.label3.TabIndex = 9;
@@ -224,99 +216,11 @@
             this.lstCostos.Size = new System.Drawing.Size(239, 303);
             this.lstCostos.TabIndex = 11;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Stencil", 10F);
-            this.label4.Location = new System.Drawing.Point(710, 164);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(277, 17);
-            this.label4.TabIndex = 18;
-            this.label4.Text = "Tiempo minimo de entrega de Convoy";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Stencil", 10F);
-            this.label5.Location = new System.Drawing.Point(363, 192);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(258, 17);
-            this.label5.TabIndex = 17;
-            this.label5.Text = "Minimo de municiones consumidas";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Stencil", 10F);
-            this.label6.Location = new System.Drawing.Point(363, 165);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(261, 17);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "Maximo de municiones consumidas";
-            // 
-            // numTiempoMinConvoy
-            // 
-            this.numTiempoMinConvoy.Location = new System.Drawing.Point(993, 162);
-            this.numTiempoMinConvoy.Maximum = new decimal(new int[] {
-            50000,
-            0,
-            0,
-            0});
-            this.numTiempoMinConvoy.Name = "numTiempoMinConvoy";
-            this.numTiempoMinConvoy.Size = new System.Drawing.Size(64, 20);
-            this.numTiempoMinConvoy.TabIndex = 15;
-            // 
-            // numConsumoMin
-            // 
-            this.numConsumoMin.Location = new System.Drawing.Point(630, 191);
-            this.numConsumoMin.Maximum = new decimal(new int[] {
-            50000,
-            0,
-            0,
-            0});
-            this.numConsumoMin.Name = "numConsumoMin";
-            this.numConsumoMin.Size = new System.Drawing.Size(64, 20);
-            this.numConsumoMin.TabIndex = 14;
-            // 
-            // numConsumoMax
-            // 
-            this.numConsumoMax.Location = new System.Drawing.Point(630, 164);
-            this.numConsumoMax.Maximum = new decimal(new int[] {
-            50000,
-            0,
-            0,
-            0});
-            this.numConsumoMax.Name = "numConsumoMax";
-            this.numConsumoMax.Size = new System.Drawing.Size(64, 20);
-            this.numConsumoMax.TabIndex = 13;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Stencil", 10F);
-            this.label7.Location = new System.Drawing.Point(710, 191);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(280, 17);
-            this.label7.TabIndex = 20;
-            this.label7.Text = "Tiempo maximo de entrega de Convoy";
-            // 
-            // numTiempoMaxConvoy
-            // 
-            this.numTiempoMaxConvoy.Location = new System.Drawing.Point(993, 188);
-            this.numTiempoMaxConvoy.Maximum = new decimal(new int[] {
-            50000,
-            0,
-            0,
-            0});
-            this.numTiempoMaxConvoy.Name = "numTiempoMaxConvoy";
-            this.numTiempoMaxConvoy.Size = new System.Drawing.Size(64, 20);
-            this.numTiempoMaxConvoy.TabIndex = 19;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Stencil", 10F);
-            this.label8.Location = new System.Drawing.Point(720, 120);
+            this.label8.Location = new System.Drawing.Point(753, 121);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(126, 17);
             this.label8.TabIndex = 26;
@@ -336,7 +240,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Stencil", 10F);
-            this.label10.Location = new System.Drawing.Point(720, 66);
+            this.label10.Location = new System.Drawing.Point(723, 67);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(157, 17);
             this.label10.TabIndex = 24;
@@ -382,16 +286,16 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Stencil", 10F);
-            this.label11.Location = new System.Drawing.Point(964, 68);
+            this.label11.Location = new System.Drawing.Point(586, 153);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(91, 34);
+            this.label11.Size = new System.Drawing.Size(142, 17);
             this.label11.TabIndex = 28;
-            this.label11.Text = "Horas\r\nde combate\r\n";
+            this.label11.Text = "Horas de combate\r\n";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // numHoras
             // 
-            this.numHoras.Location = new System.Drawing.Point(978, 107);
+            this.numHoras.Location = new System.Drawing.Point(733, 152);
             this.numHoras.Maximum = new decimal(new int[] {
             50000,
             0,
@@ -405,7 +309,7 @@
             // 
             this.lblConsumoTotal.AutoSize = true;
             this.lblConsumoTotal.Font = new System.Drawing.Font("Stencil", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConsumoTotal.Location = new System.Drawing.Point(361, 234);
+            this.lblConsumoTotal.Location = new System.Drawing.Point(390, 213);
             this.lblConsumoTotal.Name = "lblConsumoTotal";
             this.lblConsumoTotal.Size = new System.Drawing.Size(212, 16);
             this.lblConsumoTotal.TabIndex = 33;
@@ -415,7 +319,7 @@
             // 
             this.lblFaltantesTotales.AutoSize = true;
             this.lblFaltantesTotales.Font = new System.Drawing.Font("Stencil", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFaltantesTotales.Location = new System.Drawing.Point(361, 254);
+            this.lblFaltantesTotales.Location = new System.Drawing.Point(390, 233);
             this.lblFaltantesTotales.Name = "lblFaltantesTotales";
             this.lblFaltantesTotales.Size = new System.Drawing.Size(162, 16);
             this.lblFaltantesTotales.TabIndex = 34;
@@ -425,7 +329,7 @@
             // 
             this.lblCostoTotal.AutoSize = true;
             this.lblCostoTotal.Font = new System.Drawing.Font("Stencil", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCostoTotal.Location = new System.Drawing.Point(361, 276);
+            this.lblCostoTotal.Location = new System.Drawing.Point(390, 255);
             this.lblCostoTotal.Name = "lblCostoTotal";
             this.lblCostoTotal.Size = new System.Drawing.Size(203, 16);
             this.lblCostoTotal.TabIndex = 36;
@@ -435,7 +339,7 @@
             // 
             this.lblConvoyes.AutoSize = true;
             this.lblConvoyes.Font = new System.Drawing.Font("Stencil", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConvoyes.Location = new System.Drawing.Point(654, 234);
+            this.lblConvoyes.Location = new System.Drawing.Point(683, 213);
             this.lblConvoyes.Name = "lblConvoyes";
             this.lblConvoyes.Size = new System.Drawing.Size(215, 16);
             this.lblConvoyes.TabIndex = 35;
@@ -445,7 +349,7 @@
             // 
             this.lblHorasSinMunicion.AutoSize = true;
             this.lblHorasSinMunicion.Font = new System.Drawing.Font("Stencil", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHorasSinMunicion.Location = new System.Drawing.Point(654, 254);
+            this.lblHorasSinMunicion.Location = new System.Drawing.Point(683, 233);
             this.lblHorasSinMunicion.Name = "lblHorasSinMunicion";
             this.lblHorasSinMunicion.Size = new System.Drawing.Size(224, 16);
             this.lblHorasSinMunicion.TabIndex = 38;
@@ -455,7 +359,7 @@
             // 
             this.lblEficiencia.AutoSize = true;
             this.lblEficiencia.Font = new System.Drawing.Font("Stencil", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEficiencia.Location = new System.Drawing.Point(654, 276);
+            this.lblEficiencia.Location = new System.Drawing.Point(683, 255);
             this.lblEficiencia.Name = "lblEficiencia";
             this.lblEficiencia.Size = new System.Drawing.Size(246, 16);
             this.lblEficiencia.TabIndex = 37;
@@ -637,6 +541,51 @@
             this.cmdGenerar.UseVisualStyleBackColor = false;
             this.cmdGenerar.Click += new System.EventHandler(this.cmdGenerar_Click);
             // 
+            // cmbIntensidadCombate
+            // 
+            this.cmbIntensidadCombate.FormattingEnabled = true;
+            this.cmbIntensidadCombate.Items.AddRange(new object[] {
+            "Patrulla",
+            "Baja",
+            "Media",
+            "Alta"});
+            this.cmbIntensidadCombate.Location = new System.Drawing.Point(578, 181);
+            this.cmbIntensidadCombate.Name = "cmbIntensidadCombate";
+            this.cmbIntensidadCombate.Size = new System.Drawing.Size(108, 21);
+            this.cmbIntensidadCombate.TabIndex = 43;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Stencil", 10F);
+            this.label4.Location = new System.Drawing.Point(397, 181);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(176, 17);
+            this.label4.TabIndex = 44;
+            this.label4.Text = "Intensidad de Combate";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Stencil", 10F);
+            this.label5.Location = new System.Drawing.Point(726, 183);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(154, 17);
+            this.label5.TabIndex = 46;
+            this.label5.Text = "Riesgo para Convoy";
+            // 
+            // cmbConvoyRiesgo
+            // 
+            this.cmbConvoyRiesgo.FormattingEnabled = true;
+            this.cmbConvoyRiesgo.Items.AddRange(new object[] {
+            "Baja",
+            "Media",
+            "Alta"});
+            this.cmbConvoyRiesgo.Location = new System.Drawing.Point(885, 181);
+            this.cmbConvoyRiesgo.Name = "cmbConvoyRiesgo";
+            this.cmbConvoyRiesgo.Size = new System.Drawing.Size(108, 21);
+            this.cmbConvoyRiesgo.TabIndex = 45;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -645,6 +594,10 @@
             this.BackgroundImage = global::SimulacionMILSIM.Properties.Resources.tabletUW2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1612, 813);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.cmbConvoyRiesgo);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.cmbIntensidadCombate);
             this.Controls.Add(this.dgvNumeros);
             this.Controls.Add(this.gbxDatos);
             this.Controls.Add(this.cmdGenerar);
@@ -663,14 +616,6 @@
             this.Controls.Add(this.numCostoConvoy);
             this.Controls.Add(this.numCostoFaltante);
             this.Controls.Add(this.numCostoInventario);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.numTiempoMaxConvoy);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.numTiempoMinConvoy);
-            this.Controls.Add(this.numConsumoMin);
-            this.Controls.Add(this.numConsumoMax);
             this.Controls.Add(this.lstConvoy);
             this.Controls.Add(this.lstCostos);
             this.Controls.Add(this.lstFaltantes);
@@ -690,10 +635,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numReorden)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numRestock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartMunicion)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numTiempoMinConvoy)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numConsumoMin)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numConsumoMax)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numTiempoMaxConvoy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCostoConvoy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCostoFaltante)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCostoInventario)).EndInit();
@@ -719,14 +660,6 @@
         private System.Windows.Forms.ListBox lstFaltantes;
         private System.Windows.Forms.ListBox lstConvoy;
         private System.Windows.Forms.ListBox lstCostos;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.NumericUpDown numTiempoMinConvoy;
-        private System.Windows.Forms.NumericUpDown numConsumoMin;
-        private System.Windows.Forms.NumericUpDown numConsumoMax;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.NumericUpDown numTiempoMaxConvoy;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
@@ -757,6 +690,10 @@
         private System.Windows.Forms.TextBox txtM;
         private System.Windows.Forms.Label lblC;
         private System.Windows.Forms.Button cmdGenerar;
+        private System.Windows.Forms.ComboBox cmbIntensidadCombate;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cmbConvoyRiesgo;
     }
 }
 

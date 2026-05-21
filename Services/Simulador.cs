@@ -1,25 +1,32 @@
 using System;
 using System.Collections.Generic;
 using SimulacionMILSIM.Models;
+using static SimulacionMILSIMVariables.Variables;
+using SimulacionMILSIMGenerador;
+using SimulacionMILSIMFunciones;
 
-namespace SimulacionMILSIM.Services
+namespace SimulacionMILSIMSimulador
 {
     public class Simulador
     {
-        private Random rnd = new Random();
-
         public List<ResultadoSimulacion> 
             EjecutarSimulacion(
             Inventario inventario,
             Escuadra escuadra,
             ConfigSim config)
+
         {
-            List<ResultadoSimulacion> resultados =
-                new List<ResultadoSimulacion>();
+            List<ResultadoSimulacion> resultados = new List<ResultadoSimulacion>();
 
             Convoy convoy = new Convoy();
 
             double costoTotalAcumulado = 0;
+
+            // ==========================
+            // EVENTOS
+            // =========================
+
+            int NPseudo = 0;
 
             for (int hora = 1; hora <= config.HorasSimulacion; hora++)
             {
@@ -29,11 +36,33 @@ namespace SimulacionMILSIM.Services
                 // CONSUMO
                 // ======================
 
-                int consumo = rnd.Next(
-                    escuadra.ConsumoMinimo,
-                    escuadra.ConsumoMaximo + 1);
+                float rConsumoAmmo = Pseudo.Numeros[NPseudo];
+
+                NPseudo = Funciones.SiguientePseudo(NPseudo);
+
+                int consumo = escuadra.ConsumoMinimo + (int)(rConsumoAmmo * 
+                    (escuadra.ConsumoMaximo - escuadra.ConsumoMinimo + 1));
 
                 inventario.StockActual -= consumo;
+
+
+                // ======================
+                // EVENTO ALEATORIO
+                // PERDIDA DE MUNICION
+                // ======================
+
+                float rPerdidaAmmo = Pseudo.Numeros[NPseudo];
+
+                NPseudo = Funciones.SiguientePseudo(NPseudo);
+
+                bool perdidaMunicion = false;
+
+                if (rPerdidaAmmo < 0.05f)
+                {
+                    inventario.StockActual -= 15;
+
+                    perdidaMunicion = true;
+                }
 
                 int faltante = 0;
 
@@ -50,6 +79,7 @@ namespace SimulacionMILSIM.Services
 
                 bool reorden = false;
 
+
                 // ======================
                 // CONVOY EN CAMINO
                 // ======================
@@ -57,6 +87,23 @@ namespace SimulacionMILSIM.Services
                 if (convoy.EnCamino)
                 {
                     convoy.HorasRestantes--;
+
+                    // ======================
+                    // POSIBLE RETRASO
+                    // ======================
+
+                    float rRetraso = Pseudo.Numeros[NPseudo];
+
+                    NPseudo = Funciones.SiguientePseudo(NPseudo);
+
+                    bool ConvoyRetrasado = false;
+
+                    if (rRetraso < 0.10f)
+                    {
+                        convoy.HorasRestantes += 2;
+
+                        ConvoyRetrasado = true;
+                    }
 
                     if (convoy.HorasRestantes <= 0)
                     {
@@ -68,6 +115,7 @@ namespace SimulacionMILSIM.Services
                         convoyLlegado = true;
                     }
                 }
+
 
                 // ======================
                 // SOLICITAR CONVOY
@@ -85,10 +133,16 @@ namespace SimulacionMILSIM.Services
                         convoy.CantidadMunicion =
                             inventario.CantidadReabastecimiento;
 
-                        convoy.HorasRestantes =
-                            rnd.Next(
-                                config.TiempoMinConvoy,
-                                config.TiempoMaxConvoy +1);
+                        // ======================
+                        // TIEMPO
+                        // ======================
+
+                        float rConvoy = Pseudo.Numeros[NPseudo];
+
+                        NPseudo = Funciones.SiguientePseudo(NPseudo);
+
+                        convoy.HorasRestantes =  config.TiempoMinConvoy + 
+                            (int)( rConvoy * ( config.TiempoMaxConvoy - config.TiempoMinConvoy + 1));
 
                         reorden = true;
 
@@ -100,9 +154,11 @@ namespace SimulacionMILSIM.Services
                 // COSTOS
                 // ==========================
 
-                double costoInventario = config.CostoInventario;
+                double costoInventario = 
+                    inventario.StockActual * config.CostoInventario;
 
-                double costoFaltante = config.CostoFaltante;
+                double costoFaltante = 
+                    faltante * config.CostoFaltante;
 
                 double costoTotal =
                     costoInventario +

@@ -60,18 +60,18 @@
             this.colNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPseudoaleatorio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbxDatos = new System.Windows.Forms.GroupBox();
-            this.lblA = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.txtA = new System.Windows.Forms.TextBox();
-            this.lblTotal = new System.Windows.Forms.Label();
             this.txtC = new System.Windows.Forms.TextBox();
-            this.lblM = new System.Windows.Forms.Label();
             this.txtXo = new System.Windows.Forms.TextBox();
-            this.lblXo = new System.Windows.Forms.Label();
             this.txtM = new System.Windows.Forms.TextBox();
-            this.lblC = new System.Windows.Forms.Label();
             this.cmdSalir = new System.Windows.Forms.Button();
             this.cmdGenerar = new System.Windows.Forms.Button();
+            this.lblA = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.lblM = new System.Windows.Forms.Label();
+            this.lblXo = new System.Windows.Forms.Label();
+            this.lblC = new System.Windows.Forms.Label();
             this.gbxPrueba.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrueba)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNumeros)).BeginInit();
@@ -80,7 +80,7 @@
             // 
             // gbxPrueba
             // 
-            this.gbxPrueba.BackColor = System.Drawing.SystemColors.Control;
+            this.gbxPrueba.BackColor = System.Drawing.Color.OliveDrab;
             this.gbxPrueba.Controls.Add(this.txtX2Calc);
             this.gbxPrueba.Controls.Add(this.lblXoCalc);
             this.gbxPrueba.Controls.Add(this.txtX2Tabla);
@@ -102,14 +102,13 @@
             this.gbxPrueba.Controls.Add(this.label2);
             this.gbxPrueba.Controls.Add(this.txtAlfa);
             this.gbxPrueba.Controls.Add(this.lblAlfa);
-            this.gbxPrueba.Controls.Add(this.cmdPrueba);
             this.gbxPrueba.Controls.Add(this.txtGConfianza);
             this.gbxPrueba.Controls.Add(this.lblGConfianza);
-            this.gbxPrueba.Location = new System.Drawing.Point(541, 59);
+            this.gbxPrueba.Location = new System.Drawing.Point(518, 59);
             this.gbxPrueba.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gbxPrueba.Name = "gbxPrueba";
             this.gbxPrueba.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.gbxPrueba.Size = new System.Drawing.Size(477, 561);
+            this.gbxPrueba.Size = new System.Drawing.Size(500, 561);
             this.gbxPrueba.TabIndex = 19;
             this.gbxPrueba.TabStop = false;
             this.gbxPrueba.Text = "Pruebas";
@@ -126,10 +125,11 @@
             // lblXoCalc
             // 
             this.lblXoCalc.AutoSize = true;
-            this.lblXoCalc.Location = new System.Drawing.Point(62, 499);
+            this.lblXoCalc.Font = new System.Drawing.Font("Stencil", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblXoCalc.Location = new System.Drawing.Point(47, 498);
             this.lblXoCalc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblXoCalc.Name = "lblXoCalc";
-            this.lblXoCalc.Size = new System.Drawing.Size(41, 13);
+            this.lblXoCalc.Size = new System.Drawing.Size(54, 16);
             this.lblXoCalc.TabIndex = 30;
             this.lblXoCalc.Text = "X² Calc";
             // 
@@ -145,30 +145,33 @@
             // lblXoTabla
             // 
             this.lblXoTabla.AutoSize = true;
-            this.lblXoTabla.Location = new System.Drawing.Point(265, 499);
+            this.lblXoTabla.Font = new System.Drawing.Font("Stencil", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblXoTabla.Location = new System.Drawing.Point(249, 496);
             this.lblXoTabla.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblXoTabla.Name = "lblXoTabla";
-            this.lblXoTabla.Size = new System.Drawing.Size(47, 13);
+            this.lblXoTabla.Size = new System.Drawing.Size(63, 16);
             this.lblXoTabla.TabIndex = 28;
             this.lblXoTabla.Text = "X² Tabla";
             // 
             // lblDistribucion1
             // 
             this.lblDistribucion1.AutoSize = true;
-            this.lblDistribucion1.Location = new System.Drawing.Point(146, 206);
+            this.lblDistribucion1.Font = new System.Drawing.Font("Stencil", 10F);
+            this.lblDistribucion1.Location = new System.Drawing.Point(47, 208);
             this.lblDistribucion1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDistribucion1.Name = "lblDistribucion1";
-            this.lblDistribucion1.Size = new System.Drawing.Size(151, 26);
+            this.lblDistribucion1.Size = new System.Drawing.Size(250, 34);
             this.lblDistribucion1.TabIndex = 27;
             this.lblDistribucion1.Text = "No distribuidos uniformemente,\r\ncalcular nuevos datos.";
             // 
             // lblDistribucion2
             // 
             this.lblDistribucion2.AutoSize = true;
-            this.lblDistribucion2.Location = new System.Drawing.Point(161, 530);
+            this.lblDistribucion2.Font = new System.Drawing.Font("Stencil", 10F);
+            this.lblDistribucion2.Location = new System.Drawing.Point(62, 521);
             this.lblDistribucion2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDistribucion2.Name = "lblDistribucion2";
-            this.lblDistribucion2.Size = new System.Drawing.Size(151, 26);
+            this.lblDistribucion2.Size = new System.Drawing.Size(250, 34);
             this.lblDistribucion2.TabIndex = 26;
             this.lblDistribucion2.Text = "No distribuidos uniformemente,\r\ncalcular nuevos datos.";
             // 
@@ -218,26 +221,28 @@
             // lblPrueba2
             // 
             this.lblPrueba2.AutoSize = true;
-            this.lblPrueba2.Location = new System.Drawing.Point(8, 251);
+            this.lblPrueba2.Font = new System.Drawing.Font("Stencil", 10F);
+            this.lblPrueba2.Location = new System.Drawing.Point(57, 247);
             this.lblPrueba2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPrueba2.Name = "lblPrueba2";
-            this.lblPrueba2.Size = new System.Drawing.Size(50, 13);
+            this.lblPrueba2.Size = new System.Drawing.Size(74, 17);
             this.lblPrueba2.TabIndex = 16;
             this.lblPrueba2.Text = "Prueba 2";
             // 
             // lblPrueba1
             // 
             this.lblPrueba1.AutoSize = true;
-            this.lblPrueba1.Location = new System.Drawing.Point(8, 72);
+            this.lblPrueba1.Font = new System.Drawing.Font("Stencil", 10F);
+            this.lblPrueba1.Location = new System.Drawing.Point(57, 77);
             this.lblPrueba1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPrueba1.Name = "lblPrueba1";
-            this.lblPrueba1.Size = new System.Drawing.Size(50, 13);
+            this.lblPrueba1.Size = new System.Drawing.Size(74, 17);
             this.lblPrueba1.TabIndex = 15;
             this.lblPrueba1.Text = "Prueba 1";
             // 
             // txtLInferior
             // 
-            this.txtLInferior.Location = new System.Drawing.Point(92, 171);
+            this.txtLInferior.Location = new System.Drawing.Point(139, 171);
             this.txtLInferior.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtLInferior.Name = "txtLInferior";
             this.txtLInferior.ReadOnly = true;
@@ -247,16 +252,17 @@
             // lblLInferior
             // 
             this.lblLInferior.AutoSize = true;
+            this.lblLInferior.Font = new System.Drawing.Font("Stencil", 10F);
             this.lblLInferior.Location = new System.Drawing.Point(10, 174);
             this.lblLInferior.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLInferior.Name = "lblLInferior";
-            this.lblLInferior.Size = new System.Drawing.Size(74, 13);
+            this.lblLInferior.Size = new System.Drawing.Size(129, 17);
             this.lblLInferior.TabIndex = 13;
             this.lblLInferior.Text = "Límite Inferior:";
             // 
             // txtLSuperior
             // 
-            this.txtLSuperior.Location = new System.Drawing.Point(305, 172);
+            this.txtLSuperior.Location = new System.Drawing.Point(375, 171);
             this.txtLSuperior.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtLSuperior.Name = "txtLSuperior";
             this.txtLSuperior.ReadOnly = true;
@@ -266,16 +272,17 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(218, 175);
+            this.label6.Font = new System.Drawing.Font("Stencil", 10F);
+            this.label6.Location = new System.Drawing.Point(235, 174);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(79, 13);
+            this.label6.Size = new System.Drawing.Size(132, 17);
             this.label6.TabIndex = 11;
             this.label6.Text = "Limite Superior:";
             // 
             // txtZa2
             // 
-            this.txtZa2.Location = new System.Drawing.Point(92, 132);
+            this.txtZa2.Location = new System.Drawing.Point(139, 132);
             this.txtZa2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtZa2.Name = "txtZa2";
             this.txtZa2.ReadOnly = true;
@@ -285,16 +292,17 @@
             // lblZa2
             // 
             this.lblZa2.AutoSize = true;
+            this.lblZa2.Font = new System.Drawing.Font("Stencil", 10F);
             this.lblZa2.Location = new System.Drawing.Point(10, 135);
             this.lblZa2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblZa2.Name = "lblZa2";
-            this.lblZa2.Size = new System.Drawing.Size(31, 13);
+            this.lblZa2.Size = new System.Drawing.Size(37, 17);
             this.lblZa2.TabIndex = 9;
             this.lblZa2.Text = "Za/2";
             // 
             // txtVDistribucion
             // 
-            this.txtVDistribucion.Location = new System.Drawing.Point(305, 133);
+            this.txtVDistribucion.Location = new System.Drawing.Point(375, 132);
             this.txtVDistribucion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtVDistribucion.Name = "txtVDistribucion";
             this.txtVDistribucion.ReadOnly = true;
@@ -304,16 +312,17 @@
             // lblVDistribución
             // 
             this.lblVDistribución.AutoSize = true;
-            this.lblVDistribución.Location = new System.Drawing.Point(218, 121);
+            this.lblVDistribución.Font = new System.Drawing.Font("Stencil", 10F);
+            this.lblVDistribución.Location = new System.Drawing.Point(235, 124);
             this.lblVDistribución.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblVDistribución.Name = "lblVDistribución";
-            this.lblVDistribución.Size = new System.Drawing.Size(65, 26);
+            this.lblVDistribución.Size = new System.Drawing.Size(110, 34);
             this.lblVDistribución.TabIndex = 7;
-            this.lblVDistribución.Text = "Valor de\r\nDistribución:";
+            this.lblVDistribución.Text = "Valor de \r\nDistribución:";
             // 
             // txtPromedio
             // 
-            this.txtPromedio.Location = new System.Drawing.Point(305, 95);
+            this.txtPromedio.Location = new System.Drawing.Point(375, 94);
             this.txtPromedio.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPromedio.Name = "txtPromedio";
             this.txtPromedio.ReadOnly = true;
@@ -323,16 +332,17 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(218, 97);
+            this.label2.Font = new System.Drawing.Font("Stencil", 10F);
+            this.label2.Location = new System.Drawing.Point(235, 96);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 13);
+            this.label2.Size = new System.Drawing.Size(84, 17);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Promedio";
+            this.label2.Text = "Promedio:";
             // 
             // txtAlfa
             // 
-            this.txtAlfa.Location = new System.Drawing.Point(92, 94);
+            this.txtAlfa.Location = new System.Drawing.Point(139, 94);
             this.txtAlfa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtAlfa.Name = "txtAlfa";
             this.txtAlfa.ReadOnly = true;
@@ -342,28 +352,31 @@
             // lblAlfa
             // 
             this.lblAlfa.AutoSize = true;
+            this.lblAlfa.Font = new System.Drawing.Font("Stencil", 10F);
             this.lblAlfa.Location = new System.Drawing.Point(10, 96);
             this.lblAlfa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAlfa.Name = "lblAlfa";
-            this.lblAlfa.Size = new System.Drawing.Size(28, 13);
+            this.lblAlfa.Size = new System.Drawing.Size(46, 17);
             this.lblAlfa.TabIndex = 3;
             this.lblAlfa.Text = "Alfa:";
             // 
             // cmdPrueba
             // 
+            this.cmdPrueba.BackColor = System.Drawing.Color.OliveDrab;
             this.cmdPrueba.Enabled = false;
-            this.cmdPrueba.Location = new System.Drawing.Point(260, 22);
+            this.cmdPrueba.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmdPrueba.Location = new System.Drawing.Point(54, 333);
             this.cmdPrueba.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdPrueba.Name = "cmdPrueba";
-            this.cmdPrueba.Size = new System.Drawing.Size(144, 32);
+            this.cmdPrueba.Size = new System.Drawing.Size(192, 31);
             this.cmdPrueba.TabIndex = 2;
             this.cmdPrueba.Text = "Ejecutar Pruebas";
-            this.cmdPrueba.UseVisualStyleBackColor = true;
+            this.cmdPrueba.UseVisualStyleBackColor = false;
             this.cmdPrueba.Click += new System.EventHandler(this.cmdPrueba_Click);
             // 
             // txtGConfianza
             // 
-            this.txtGConfianza.Location = new System.Drawing.Point(119, 29);
+            this.txtGConfianza.Location = new System.Drawing.Point(173, 27);
             this.txtGConfianza.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtGConfianza.Name = "txtGConfianza";
             this.txtGConfianza.Size = new System.Drawing.Size(124, 20);
@@ -373,10 +386,11 @@
             // lblGConfianza
             // 
             this.lblGConfianza.AutoSize = true;
-            this.lblGConfianza.Location = new System.Drawing.Point(8, 32);
+            this.lblGConfianza.Font = new System.Drawing.Font("Stencil", 10F);
+            this.lblGConfianza.Location = new System.Drawing.Point(10, 29);
             this.lblGConfianza.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGConfianza.Name = "lblGConfianza";
-            this.lblGConfianza.Size = new System.Drawing.Size(103, 13);
+            this.lblGConfianza.Size = new System.Drawing.Size(158, 17);
             this.lblGConfianza.TabIndex = 0;
             this.lblGConfianza.Text = "Grado de confianza:";
             // 
@@ -417,38 +431,29 @@
             // 
             // gbxDatos
             // 
+            this.gbxDatos.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.gbxDatos.Controls.Add(this.lblA);
+            this.gbxDatos.Controls.Add(this.lblTotal);
+            this.gbxDatos.Controls.Add(this.lblM);
+            this.gbxDatos.Controls.Add(this.lblXo);
+            this.gbxDatos.Controls.Add(this.lblC);
             this.gbxDatos.Controls.Add(this.txtTotal);
             this.gbxDatos.Controls.Add(this.txtA);
-            this.gbxDatos.Controls.Add(this.lblTotal);
             this.gbxDatos.Controls.Add(this.txtC);
-            this.gbxDatos.Controls.Add(this.lblM);
             this.gbxDatos.Controls.Add(this.txtXo);
-            this.gbxDatos.Controls.Add(this.lblXo);
             this.gbxDatos.Controls.Add(this.txtM);
-            this.gbxDatos.Controls.Add(this.lblC);
-            this.gbxDatos.Location = new System.Drawing.Point(74, 70);
+            this.gbxDatos.Location = new System.Drawing.Point(54, 70);
             this.gbxDatos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gbxDatos.Name = "gbxDatos";
             this.gbxDatos.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.gbxDatos.Size = new System.Drawing.Size(155, 242);
+            this.gbxDatos.Size = new System.Drawing.Size(192, 191);
             this.gbxDatos.TabIndex = 17;
             this.gbxDatos.TabStop = false;
             this.gbxDatos.Text = "Datos";
             // 
-            // lblA
-            // 
-            this.lblA.AutoSize = true;
-            this.lblA.Location = new System.Drawing.Point(22, 42);
-            this.lblA.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblA.Name = "lblA";
-            this.lblA.Size = new System.Drawing.Size(16, 13);
-            this.lblA.TabIndex = 0;
-            this.lblA.Text = "a:";
-            // 
             // txtTotal
             // 
-            this.txtTotal.Location = new System.Drawing.Point(49, 192);
+            this.txtTotal.Location = new System.Drawing.Point(100, 161);
             this.txtTotal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(88, 20);
@@ -458,7 +463,7 @@
             // 
             // txtA
             // 
-            this.txtA.Location = new System.Drawing.Point(53, 39);
+            this.txtA.Location = new System.Drawing.Point(100, 26);
             this.txtA.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtA.Name = "txtA";
             this.txtA.Size = new System.Drawing.Size(84, 20);
@@ -466,19 +471,9 @@
             this.txtA.Text = "101";
             this.txtA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // lblTotal
-            // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(7, 195);
-            this.lblTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(34, 13);
-            this.lblTotal.TabIndex = 8;
-            this.lblTotal.Text = "Total:";
-            // 
             // txtC
             // 
-            this.txtC.Location = new System.Drawing.Point(53, 79);
+            this.txtC.Location = new System.Drawing.Point(100, 64);
             this.txtC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtC.Name = "txtC";
             this.txtC.Size = new System.Drawing.Size(84, 20);
@@ -486,19 +481,9 @@
             this.txtC.Text = "221";
             this.txtC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // lblM
-            // 
-            this.lblM.AutoSize = true;
-            this.lblM.Location = new System.Drawing.Point(22, 160);
-            this.lblM.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblM.Name = "lblM";
-            this.lblM.Size = new System.Drawing.Size(19, 13);
-            this.lblM.TabIndex = 6;
-            this.lblM.Text = "M:";
-            // 
             // txtXo
             // 
-            this.txtXo.Location = new System.Drawing.Point(53, 118);
+            this.txtXo.Location = new System.Drawing.Point(100, 94);
             this.txtXo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtXo.Name = "txtXo";
             this.txtXo.Size = new System.Drawing.Size(84, 20);
@@ -506,19 +491,9 @@
             this.txtXo.Text = "17";
             this.txtXo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // lblXo
-            // 
-            this.lblXo.AutoSize = true;
-            this.lblXo.Location = new System.Drawing.Point(22, 121);
-            this.lblXo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblXo.Name = "lblXo";
-            this.lblXo.Size = new System.Drawing.Size(23, 13);
-            this.lblXo.TabIndex = 4;
-            this.lblXo.Text = "Xo:";
-            // 
             // txtM
             // 
-            this.txtM.Location = new System.Drawing.Point(49, 157);
+            this.txtM.Location = new System.Drawing.Point(100, 128);
             this.txtM.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtM.Name = "txtM";
             this.txtM.Size = new System.Drawing.Size(88, 20);
@@ -526,38 +501,82 @@
             this.txtM.Text = "17001";
             this.txtM.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // lblC
-            // 
-            this.lblC.AutoSize = true;
-            this.lblC.Location = new System.Drawing.Point(22, 82);
-            this.lblC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblC.Name = "lblC";
-            this.lblC.Size = new System.Drawing.Size(16, 13);
-            this.lblC.TabIndex = 2;
-            this.lblC.Text = "c:";
-            // 
             // cmdSalir
             // 
+            this.cmdSalir.BackColor = System.Drawing.Color.OliveDrab;
             this.cmdSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.cmdSalir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cmdSalir.Location = new System.Drawing.Point(54, 589);
             this.cmdSalir.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdSalir.Name = "cmdSalir";
             this.cmdSalir.Size = new System.Drawing.Size(192, 31);
             this.cmdSalir.TabIndex = 16;
             this.cmdSalir.Text = "Salir";
-            this.cmdSalir.UseVisualStyleBackColor = true;
+            this.cmdSalir.UseVisualStyleBackColor = false;
             this.cmdSalir.Click += new System.EventHandler(this.cmdSalir_Click);
             // 
             // cmdGenerar
             // 
-            this.cmdGenerar.Location = new System.Drawing.Point(54, 323);
+            this.cmdGenerar.BackColor = System.Drawing.Color.OliveDrab;
+            this.cmdGenerar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmdGenerar.Location = new System.Drawing.Point(50, 292);
             this.cmdGenerar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdGenerar.Name = "cmdGenerar";
             this.cmdGenerar.Size = new System.Drawing.Size(192, 31);
             this.cmdGenerar.TabIndex = 15;
             this.cmdGenerar.Text = "Generar";
-            this.cmdGenerar.UseVisualStyleBackColor = true;
+            this.cmdGenerar.UseVisualStyleBackColor = false;
             this.cmdGenerar.Click += new System.EventHandler(this.cmdGenerar_Click);
+            // 
+            // lblA
+            // 
+            this.lblA.AutoSize = true;
+            this.lblA.Font = new System.Drawing.Font("Stencil", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblA.Location = new System.Drawing.Point(7, 30);
+            this.lblA.Name = "lblA";
+            this.lblA.Size = new System.Drawing.Size(92, 13);
+            this.lblA.TabIndex = 10;
+            this.lblA.Text = "Multiplicador";
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Stencil", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(7, 164);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(45, 13);
+            this.lblTotal.TabIndex = 14;
+            this.lblTotal.Text = "Total:";
+            // 
+            // lblM
+            // 
+            this.lblM.AutoSize = true;
+            this.lblM.Font = new System.Drawing.Font("Stencil", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblM.Location = new System.Drawing.Point(7, 132);
+            this.lblM.Name = "lblM";
+            this.lblM.Size = new System.Drawing.Size(50, 13);
+            this.lblM.TabIndex = 13;
+            this.lblM.Text = "Modulo";
+            // 
+            // lblXo
+            // 
+            this.lblXo.AutoSize = true;
+            this.lblXo.Font = new System.Drawing.Font("Stencil", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblXo.Location = new System.Drawing.Point(7, 98);
+            this.lblXo.Name = "lblXo";
+            this.lblXo.Size = new System.Drawing.Size(51, 13);
+            this.lblXo.TabIndex = 12;
+            this.lblXo.Text = "Semilla";
+            // 
+            // lblC
+            // 
+            this.lblC.AutoSize = true;
+            this.lblC.Font = new System.Drawing.Font("Stencil", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblC.Location = new System.Drawing.Point(7, 68);
+            this.lblC.Name = "lblC";
+            this.lblC.Size = new System.Drawing.Size(74, 13);
+            this.lblC.TabIndex = 11;
+            this.lblC.Text = "Incremento";
             // 
             // frmNPA
             // 
@@ -571,6 +590,7 @@
             this.Controls.Add(this.gbxDatos);
             this.Controls.Add(this.cmdSalir);
             this.Controls.Add(this.cmdGenerar);
+            this.Controls.Add(this.cmdPrueba);
             this.DoubleBuffered = true;
             this.Name = "frmNPA";
             this.Text = "frmNPA";
@@ -618,17 +638,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colNumero;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPseudoaleatorio;
         private System.Windows.Forms.GroupBox gbxDatos;
-        private System.Windows.Forms.Label lblA;
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.TextBox txtA;
-        private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.TextBox txtC;
-        private System.Windows.Forms.Label lblM;
         private System.Windows.Forms.TextBox txtXo;
-        private System.Windows.Forms.Label lblXo;
         private System.Windows.Forms.TextBox txtM;
-        private System.Windows.Forms.Label lblC;
         private System.Windows.Forms.Button cmdSalir;
         private System.Windows.Forms.Button cmdGenerar;
+        private System.Windows.Forms.Label lblA;
+        private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.Label lblM;
+        private System.Windows.Forms.Label lblXo;
+        private System.Windows.Forms.Label lblC;
     }
 }

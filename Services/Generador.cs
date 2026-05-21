@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using static SimulacionMILSIMVariables.Variables;
 
-namespace SimulacionMILSIM.Services
+namespace SimulacionMILSIMGenerador
 {
     public class pseudo
     {
