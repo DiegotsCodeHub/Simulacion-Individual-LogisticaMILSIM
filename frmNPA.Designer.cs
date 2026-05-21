@@ -53,13 +53,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtAlfa = new System.Windows.Forms.TextBox();
             this.lblAlfa = new System.Windows.Forms.Label();
-            this.cmdPrueba = new System.Windows.Forms.Button();
             this.txtGConfianza = new System.Windows.Forms.TextBox();
             this.lblGConfianza = new System.Windows.Forms.Label();
+            this.cmdPrueba = new System.Windows.Forms.Button();
             this.dgvNumeros = new System.Windows.Forms.DataGridView();
             this.colNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPseudoaleatorio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbxDatos = new System.Windows.Forms.GroupBox();
+            this.lblA = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.lblM = new System.Windows.Forms.Label();
+            this.lblXo = new System.Windows.Forms.Label();
+            this.lblC = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.txtA = new System.Windows.Forms.TextBox();
             this.txtC = new System.Windows.Forms.TextBox();
@@ -67,11 +72,6 @@
             this.txtM = new System.Windows.Forms.TextBox();
             this.cmdSalir = new System.Windows.Forms.Button();
             this.cmdGenerar = new System.Windows.Forms.Button();
-            this.lblA = new System.Windows.Forms.Label();
-            this.lblTotal = new System.Windows.Forms.Label();
-            this.lblM = new System.Windows.Forms.Label();
-            this.lblXo = new System.Windows.Forms.Label();
-            this.lblC = new System.Windows.Forms.Label();
             this.gbxPrueba.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrueba)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNumeros)).BeginInit();
@@ -360,20 +360,6 @@
             this.lblAlfa.TabIndex = 3;
             this.lblAlfa.Text = "Alfa:";
             // 
-            // cmdPrueba
-            // 
-            this.cmdPrueba.BackColor = System.Drawing.Color.OliveDrab;
-            this.cmdPrueba.Enabled = false;
-            this.cmdPrueba.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cmdPrueba.Location = new System.Drawing.Point(54, 333);
-            this.cmdPrueba.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cmdPrueba.Name = "cmdPrueba";
-            this.cmdPrueba.Size = new System.Drawing.Size(192, 31);
-            this.cmdPrueba.TabIndex = 2;
-            this.cmdPrueba.Text = "Ejecutar Pruebas";
-            this.cmdPrueba.UseVisualStyleBackColor = false;
-            this.cmdPrueba.Click += new System.EventHandler(this.cmdPrueba_Click);
-            // 
             // txtGConfianza
             // 
             this.txtGConfianza.Location = new System.Drawing.Point(173, 27);
@@ -393,6 +379,20 @@
             this.lblGConfianza.Size = new System.Drawing.Size(158, 17);
             this.lblGConfianza.TabIndex = 0;
             this.lblGConfianza.Text = "Grado de confianza:";
+            // 
+            // cmdPrueba
+            // 
+            this.cmdPrueba.BackColor = System.Drawing.Color.OliveDrab;
+            this.cmdPrueba.Enabled = false;
+            this.cmdPrueba.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmdPrueba.Location = new System.Drawing.Point(50, 333);
+            this.cmdPrueba.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cmdPrueba.Name = "cmdPrueba";
+            this.cmdPrueba.Size = new System.Drawing.Size(192, 31);
+            this.cmdPrueba.TabIndex = 2;
+            this.cmdPrueba.Text = "Ejecutar Pruebas";
+            this.cmdPrueba.UseVisualStyleBackColor = false;
+            this.cmdPrueba.Click += new System.EventHandler(this.cmdPrueba_Click);
             // 
             // dgvNumeros
             // 
@@ -450,6 +450,56 @@
             this.gbxDatos.TabIndex = 17;
             this.gbxDatos.TabStop = false;
             this.gbxDatos.Text = "Datos";
+            // 
+            // lblA
+            // 
+            this.lblA.AutoSize = true;
+            this.lblA.Font = new System.Drawing.Font("Stencil", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblA.Location = new System.Drawing.Point(7, 30);
+            this.lblA.Name = "lblA";
+            this.lblA.Size = new System.Drawing.Size(92, 13);
+            this.lblA.TabIndex = 10;
+            this.lblA.Text = "Multiplicador";
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Stencil", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(7, 164);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(45, 13);
+            this.lblTotal.TabIndex = 14;
+            this.lblTotal.Text = "Total:";
+            // 
+            // lblM
+            // 
+            this.lblM.AutoSize = true;
+            this.lblM.Font = new System.Drawing.Font("Stencil", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblM.Location = new System.Drawing.Point(7, 132);
+            this.lblM.Name = "lblM";
+            this.lblM.Size = new System.Drawing.Size(50, 13);
+            this.lblM.TabIndex = 13;
+            this.lblM.Text = "Modulo";
+            // 
+            // lblXo
+            // 
+            this.lblXo.AutoSize = true;
+            this.lblXo.Font = new System.Drawing.Font("Stencil", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblXo.Location = new System.Drawing.Point(7, 98);
+            this.lblXo.Name = "lblXo";
+            this.lblXo.Size = new System.Drawing.Size(51, 13);
+            this.lblXo.TabIndex = 12;
+            this.lblXo.Text = "Semilla";
+            // 
+            // lblC
+            // 
+            this.lblC.AutoSize = true;
+            this.lblC.Font = new System.Drawing.Font("Stencil", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblC.Location = new System.Drawing.Point(7, 68);
+            this.lblC.Name = "lblC";
+            this.lblC.Size = new System.Drawing.Size(74, 13);
+            this.lblC.TabIndex = 11;
+            this.lblC.Text = "Incremento";
             // 
             // txtTotal
             // 
@@ -528,56 +578,6 @@
             this.cmdGenerar.UseVisualStyleBackColor = false;
             this.cmdGenerar.Click += new System.EventHandler(this.cmdGenerar_Click);
             // 
-            // lblA
-            // 
-            this.lblA.AutoSize = true;
-            this.lblA.Font = new System.Drawing.Font("Stencil", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblA.Location = new System.Drawing.Point(7, 30);
-            this.lblA.Name = "lblA";
-            this.lblA.Size = new System.Drawing.Size(92, 13);
-            this.lblA.TabIndex = 10;
-            this.lblA.Text = "Multiplicador";
-            // 
-            // lblTotal
-            // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Font = new System.Drawing.Font("Stencil", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(7, 164);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(45, 13);
-            this.lblTotal.TabIndex = 14;
-            this.lblTotal.Text = "Total:";
-            // 
-            // lblM
-            // 
-            this.lblM.AutoSize = true;
-            this.lblM.Font = new System.Drawing.Font("Stencil", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblM.Location = new System.Drawing.Point(7, 132);
-            this.lblM.Name = "lblM";
-            this.lblM.Size = new System.Drawing.Size(50, 13);
-            this.lblM.TabIndex = 13;
-            this.lblM.Text = "Modulo";
-            // 
-            // lblXo
-            // 
-            this.lblXo.AutoSize = true;
-            this.lblXo.Font = new System.Drawing.Font("Stencil", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblXo.Location = new System.Drawing.Point(7, 98);
-            this.lblXo.Name = "lblXo";
-            this.lblXo.Size = new System.Drawing.Size(51, 13);
-            this.lblXo.TabIndex = 12;
-            this.lblXo.Text = "Semilla";
-            // 
-            // lblC
-            // 
-            this.lblC.AutoSize = true;
-            this.lblC.Font = new System.Drawing.Font("Stencil", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblC.Location = new System.Drawing.Point(7, 68);
-            this.lblC.Name = "lblC";
-            this.lblC.Size = new System.Drawing.Size(74, 13);
-            this.lblC.TabIndex = 11;
-            this.lblC.Text = "Incremento";
-            // 
             // frmNPA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -593,7 +593,7 @@
             this.Controls.Add(this.cmdPrueba);
             this.DoubleBuffered = true;
             this.Name = "frmNPA";
-            this.Text = "frmNPA";
+            this.Text = "Generador de Numeros PsedoAleatorios";
             this.gbxPrueba.ResumeLayout(false);
             this.gbxPrueba.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrueba)).EndInit();
